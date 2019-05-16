@@ -91,15 +91,15 @@
 	<!-- Should fix all of them but it doesn't need a manual review -->
 	<rule ref="WordPress.WP.AlternativeFunctions.file_system_read">
 		<type>warning</type>
-		<message>File operations only work using the VIP stream on VIP Go. Make sure you are getting the proper base directory using wp_upload_dir() when using functions such as %s() or it will return unexpected results. Read more here: https://vip.wordpress.com/documentation/using-wp_filesystem-instead-of-direct-file-access-functions/</message>
+		<message>File system operations only work on the `/tmp/` and `wp-content/uploads/` directories. To avoid unexpected results, please use helper functions like `get_temp_dir()`  or `wp_get_upload_dir()` to get the proper directory path when using functions such as %s(). For more details, please see: https://wpvip.com/documentation/vip-go/writing-files-on-vip-go/</message>
 	</rule>
 	<rule ref="WordPress.WP.AlternativeFunctions.file_system_read_fopen">
 		<type>warning</type>
-		<message>File operations only work using the VIP stream on VIP Go. Make sure you are getting the proper base directory using wp_upload_dir() when using functions such as %s() or it will return unexpected results. Read more here: https://vip.wordpress.com/documentation/using-wp_filesystem-instead-of-direct-file-access-functions/</message>
+		<message>File system operations only work on the `/tmp/` and `wp-content/uploads/` directories. To avoid unexpected results, please use helper functions like `get_temp_dir()`  or `wp_get_upload_dir()` to get the proper directory path when using functions such as %s(). For more details, please see: https://wpvip.com/documentation/vip-go/writing-files-on-vip-go/</message>
 	</rule>
 	<rule ref="WordPress.WP.AlternativeFunctions.file_system_read_fclose">
 		<type>warning</type>
-		<message>File operations only work using the VIP stream on VIP Go. Make sure you are getting the proper base directory using wp_upload_dir() when using functions such as %s() or it will return unexpected results. Read more here: https://vip.wordpress.com/documentation/using-wp_filesystem-instead-of-direct-file-access-functions/</message>
+		<message>File system operations only work on the `/tmp/` and `wp-content/uploads/` directories. To avoid unexpected results, please use helper functions like `get_temp_dir()`  or `wp_get_upload_dir()` to get the proper directory path when using functions such as %s(). For more details, please see: https://wpvip.com/documentation/vip-go/writing-files-on-vip-go/</message>
 	</rule>
 	<rule ref="WordPressVIPMinimum.JS.HTMLExecutingFunctions.append">
 		<type>error</type>

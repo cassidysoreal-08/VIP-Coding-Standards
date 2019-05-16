@@ -295,13 +295,13 @@ $expected = [
 			'Due to server-side caching, server-side based client related logic might not work. We recommend implementing client side logic in JavaScript instead.',
 		],
 		60  => [
-			'File operations should use WP_Filesystem methods instead of direct PHP filesystem calls. Found: fclose(). Read more here: https://vip.wordpress.com/documentation/using-wp_filesystem-instead-of-direct-file-access-functions/',
+			'Filesystem functions like fclose() must be used with the VIP stream. Make sure you are getting the proper stream base directory using wp_upload_dir()',
 		],
 		63  => [
-			'File operations should use WP_Filesystem methods instead of direct PHP filesystem calls. Found: fopen(). Read more here: https://vip.wordpress.com/documentation/using-wp_filesystem-instead-of-direct-file-access-functions/',
+			'File system operations only work on the `/tmp/` and `wp-content/uploads/` directories. To avoid unexpected results, please use helper functions like `get_temp_dir()`  or `wp_get_upload_dir()` to get the proper directory path when using functions such as fopen(). For more details, please see: https://wpvip.com/documentation/vip-go/writing-files-on-vip-go/',
 		],
 		66  => [
-			'file_get_contents() is uncached. If this is being used to query a remote file please use wpcom_vip_file_get_contents() instead. If it\'s used for a local file please use WP_Filesystem instead. Read more here: https://vip.wordpress.com/documentation/using-wp_filesystem-instead-of-direct-file-access-functions/',
+			'file_get_contents() is uncached. If the function is being used to fetch a remote file (e.g. a URL starting with https://), please use wpcom_vip_file_get_contents() to ensure the results are cached. For more details, please see https://wpvip.com/documentation/vip-go/fetching-remote-data/',
 		],
 		90 => [
 			'Having more than 100 posts returned per page may lead to severe performance problems.',
